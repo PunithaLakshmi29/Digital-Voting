@@ -1,0 +1,12 @@
+<video id="video"></video>
+<script>
+let video=document.getElementById('video');
+if(navigator.mediaDevices.getUserMedia){
+	navigator.mediaDevices.getUserMedia({video:true})
+	.then(function(s){
+		video.srcObject=s;
+	});
+}else{
+	console.log('No');
+}
+</script>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    min-height: 100vh;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+h1,
+h2{
+color:#ef3900;
+}
+    
+
+h3{
+  color: #083e54;
+}
+.btn{
+    background: #083e54;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+.btn :hover{
+    color: #083e54;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #083e54;
+}
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 10px ;
+  border-bottom: 2px solid #999;
+}
+table{
+  padding: 10px;
+}
+th,
+td{
+  text-align: left;
+  padding: 8px;
+}
+.side-menu{
+    position:fixed;
+    background: #083e54;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.side-menu .brand-name{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.side-menu li{
+    font-size: 24px;
+    padding: 10px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.side-menu li:hover {
+    background: white;
+    color: #083e54;
+}
+  .container{
+    position: absolute;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #f1f1f1;
+  }
+  .container .header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 10vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  .container .header .nav{
+    width: 90%;
+    display: flex;
+    align-items: center;
+  }
+  .container .header .nav .search{
+    flex: 3;
+    display: flex;
+    justify-content: center;
+  }
+  .container .header .nav .search input[type=text]{
+    border: none;
+    background: #f1f1f1;
+    padding: 10px;
+    width: 50%;
+  }
+  .container .header .nav .search .button{
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .header .nav .search .button img{
+    width: 30px;
+    height: 30px;
+  }
+  .container .header .nav .search{
+    width: 40px;
+    height: 40px;
+    border: none;
+  }
+  
+  .container .header .nav .user{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .container .header .nav .user .img-case{
+    position: relative;
+    width: 50px;
+    height: 50px;
+  }
+  .container .header .nav .user .img{
+    width: 40px;
+    height: 40px;
+  }
+  .container .header .nav .user .img-case img{
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+  }
+  .container .content{
+    position: relative;
+    margin: 10vh;
+    min-height: 90vh;
+    background: #f1f1f1;
+  }
+  .container .content .cards{
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .container .content .cards .card{
+    width: 250px;
+    height: 150px;
+    background: white;
+    margin: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .container .content .content-2{
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .container .content .content-2 .Votes{
+    min-height: 50vh;
+    flex: 5;
+    background: white;
+    margin: 0 25px 25px 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+  }
+  .container .content .content-2 .new-candidates{
+    flex: 2;
+    background: white;
+    min-height: 50vh;
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+  }
+  container .content .content-2 .new-candidates table td:nth-child(1){
+    height: 40px;
+    width: 40px;
+  }
+  @media  screen and (max-width:1050px) {
+    .side-menu li{
+      font-size: 18px;
+    }
+  }
+  @media  screen and (max-width:940px) {
+    .container .content .cards {
+      justify-content: center;
+    }
+    .side-menu li span{
+      display: none;
+    }
+    .side-menu {
+      align-items: center;
+    }
+    .side-menu li img{
+     width: 40px;
+     height: 40px;
+    }
+    .side-menu li:hover{
+      background: #083e54;
+      padding: 8px 38px;
+      border: 2px solid white;
+    }
+    .container .content .content-2 .Votes table th:nth-child(2),
+    .container .content .content-2 .Votes table td:nth-child(2){
+      display: none;
+    }
+  }
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet"href="style.css">
+</head>
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h1>Admin</h1>
+        </div>
+        <ul>
+            <li><img src="" alt="">&nbsp;<span>Candidates</span></li>
+            <li><img src="" alt="">&nbsp;<span>Vote Count</span></li>
+            <li><img src="" alt="">&nbsp;<span>Result</span></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+        <div class="nav">
+        <div class="search">
+        <input type="text"placeholder="Search..">
+        <button type="submit"><img src="https://www.flaticon.com/svg/vstatic/svg/3917/3917754.svg?token=exp=1677837711~hmac=6a944838a59ad1b65725cbb05bc627c1"alt=""></button>
+        </div>
+        <div class="user">
+        <a href="#"class="btn">Add new</a>
+        <img src="notifications.png"alt="">
+        <div class="img-case">
+            <img src="user.png"alt="">
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="content">
+            <div class="cards">
+            <div class="card">
+                <div class="box">
+                    <h1>5</h1>
+                    <h3>No.of Position</h3>
+                </div>
+                <div class="icone-case">
+                    <img src=""alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <h1>500</h1>
+                    <h3>No.of Votes</h3>
+                </div>
+                <div class="icone-case">
+                    <img src=""alt="">
+                </div>
+            </div>
+            <div class="card">
+                <div class="box">
+                    <h1>700</h1>
+                    <h3>No.of Voters</h3>
+                </div>
+                <div class="icone-case">
+                    <img src=""alt="">
+                </div>
+            </div>
+        </div>
+        <div class="content-2">
+            <div class="Votes">
+                <div class="title">
+                    <h2>Votes</h2>
+                    <a href="#"class="btn">View All</a>
+                </div>
+                <table>
+                    <tr>
+                        <th>name</th>
+                        <th>age</th>
+                        <th>id num</th>
+                        <th>phone num</th>
+                    </tr>
+                    <tr>
+                        <td>john</td>
+                        <td>20</td>
+                        <td>xxxx12</td>
+                        <td>1234567890</td>
+                    </tr>
+                    <tr>
+                        <td>mike</td>
+                        <td>30</td>
+                        <td>xxxx34</td>
+                        <td>2345678901</td>
+                    </tr>
+                    <tr>
+                        <td>rex</td>
+                        <td>60</td>
+                        <td>xxxx56</td>
+                        <td>7456789012</td>
+                    </tr>
+                    <tr>
+                        <td>tom</td>
+                        <td>30</td>
+                        <td>xxxx78</td>
+                        <td>9567890123</td>
+                    </tr>
+                </table>
+                </div>
+                <div class="new-candidates">
+                        <div class="title">
+                            <h2>Candidates List</h2>
+                            <a href="#"class="btn">View All</a>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>name</th>
+                                <th>position</th>
+                                <th>ward</th>
+                            </tr>
+                            <tr>
+                                <td>roy</td>
+                                <td>health</td>
+                                <td>001</td>
+                            </tr>
+                            <tr>
+                                <td>benny</td>
+                                <td>education</td>
+                                <td>002</td>
+                            </tr>
+                            <tr>
+                                <td>mark</td>
+                                <td>finance</td>
+                                <td>003</td>
+                            </tr>
+                            <tr>
+                                <td>paul</td>
+                                <td>agriculture</td>
+                                <td>004</td>
+                            </tr>
+                            <tr>
+                                <td>dennis</td>
+                                <td>social justice</td>
+                                <td>005</td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
